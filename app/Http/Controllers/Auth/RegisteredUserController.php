@@ -50,10 +50,7 @@ class RegisteredUserController extends Controller
 
             Auth::login($user);
 
-            Mail::to($user->email)->send(new UserOtpMail($user, $user->email_otp));
-            // Redirect to the OTP verification page.
-            // Since the user is now authenticated, OtpVerificationController@otp
-            return redirect()->route('otp-verification');
+            return redirect()->route('user.dashboard');
         });
         return $response;
     }
