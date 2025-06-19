@@ -55,7 +55,7 @@
                                 <i data-lucide="user-cog" class="w-6 h-6 text-indigo-600 dark:text-indigo-300"></i>
                             </div>
                             <div>
-                                <h2 class="text-lg font-semibold text-gray-900 dark:text-white">Admin Dashboard</h2>
+                                <h2 class="text-lg font-semibold text-gray-900 dark:text-white">Admin Login</h2>
                                 <p class="text-gray-600 dark:text-gray-400">Access admin control panel</p>
                             </div>
                             <div class="ml-auto text-indigo-600 dark:text-indigo-400">
