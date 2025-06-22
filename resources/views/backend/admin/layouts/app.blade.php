@@ -23,6 +23,8 @@
     </style>
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+    @stack('cs')
 </head>
 <body class="bg-gray-50 dark:bg-gray-900 font-inter antialiased" x-data="adminDashboard()" x-cloak>
     <!-- Loading Overlay -->
@@ -182,6 +184,7 @@
                     { id: 'dashboard', name: 'Dashboard', icon: 'fas fa-tachometer-alt' },
                     { id: 'users', name: 'Users', icon: 'fas fa-users', badge: '12' },
                     { id: 'analytics', name: 'Analytics', icon: 'fas fa-chart-bar' },
+                    { id: 'Admin', name: 'Admin', icon: 'fas fa-file-alt' },
                     { id: 'settings', name: 'Settings', icon: 'fas fa-cog' },
                 ],
 
@@ -543,5 +546,6 @@
             }
         }
     </script>
+    @stack('js')
 </body>
 </html>
