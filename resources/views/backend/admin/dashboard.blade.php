@@ -27,7 +27,7 @@
         </div>
 
         <!-- Charts and Activity -->
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        {{-- <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
             <!-- Recent Activity -->
             <div
                 class="lg:col-span-2 bg-white dark:bg-gray-800 rounded-xl shadow-xs border border-gray-200 dark:border-gray-700">
@@ -76,7 +76,7 @@
                     </template>
                 </div>
             </div>
-        </div>
+        </div> --}}
     </div>
 
     <!-- Users Tab -->
