@@ -7,7 +7,7 @@
         <!-- Stats Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <template x-for="(stat, index) in stats" :key="stat.id">
-                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6 hover:shadow-md transition-shadow duration-200"
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-xs border border-gray-200 dark:border-gray-700 p-6 hover:shadow-md transition-shadow duration-200"
                     :style="`animation-delay: ${index * 100}ms`">
                     <div class="flex items-center justify-between">
                         <div>
@@ -30,7 +30,7 @@
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
             <!-- Recent Activity -->
             <div
-                class="lg:col-span-2 bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700">
+                class="lg:col-span-2 bg-white dark:bg-gray-800 rounded-xl shadow-xs border border-gray-200 dark:border-gray-700">
                 <div class="p-6 border-b border-gray-200 dark:border-gray-700">
                     <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Recent Activity</h3>
                 </div>
@@ -39,7 +39,7 @@
                         <template x-for="activity in recentActivity" :key="activity.id">
                             <div
                                 class="flex items-start space-x-4 p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors duration-200">
-                                <div class="w-2 h-2 bg-primary-500 rounded-full mt-2 flex-shrink-0"></div>
+                                <div class="w-2 h-2 bg-primary-500 rounded-full mt-2 shrink-0"></div>
                                 <div class="flex-1 min-w-0">
                                     <p class="text-sm font-medium text-gray-900 dark:text-white"
                                         x-text="activity.description"></p>
@@ -55,7 +55,7 @@
             </div>
 
             <!-- Quick Stats -->
-            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700">
+            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-xs border border-gray-200 dark:border-gray-700">
                 <div class="p-6 border-b border-gray-200 dark:border-gray-700">
                     <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Quick Stats</h3>
                 </div>
@@ -80,9 +80,9 @@
     </div>
 
     <!-- Users Tab -->
-    {{-- <div x-show="activeTab === 'users'" class="space-y-6 animate-fade-in">
+    <div x-show="activeTab === 'users'" class="space-y-6 animate-fade-in">
         <!-- Users Header -->
-        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6">
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-xs border border-gray-200 dark:border-gray-700 p-6">
             <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between space-y-4 sm:space-y-0">
                 <div>
                     <h3 class="text-lg font-semibold text-gray-900 dark:text-white">User Management</h3>
@@ -96,7 +96,7 @@
                         <i class="fas fa-search absolute left-3 top-3 text-gray-400 text-sm"></i>
                     </div>
                     <button @click="openUserModal()"
-                        class="bg-primary-500 hover:bg-primary-600 dark:text-white  px-4 py-2 rounded-lg flex items-center space-x-2 transition-colors duration-200 shadow-sm">
+                        class="bg-primary-500 hover:bg-primary-600 dark:text-white  px-4 py-2 rounded-lg flex items-center space-x-2 transition-colors duration-200 shadow-xs">
                         <i class="fas fa-plus text-sm"></i>
                         <span>Add User</span>
                     </button>
@@ -106,7 +106,7 @@
 
         <!-- Users Table -->
         <div
-            class="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden">
+            class="bg-white dark:bg-gray-800 rounded-xl shadow-xs border border-gray-200 dark:border-gray-700 overflow-hidden">
             <div class="overflow-x-auto">
                 <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
                     <thead class="bg-gray-50 dark:bg-gray-700">
@@ -114,7 +114,7 @@
                             <th
                                 class="px-6 py-4 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
                                 <input type="checkbox"
-                                    class="rounded border-gray-300 text-primary-600 focus:ring-primary-500">
+                                    class="rounded-sm border-gray-300 text-primary-600 focus:ring-primary-500">
                             </th>
                             <th
                                 class="px-6 py-4 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
@@ -138,7 +138,7 @@
                             <tr class="hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors duration-200">
                                 <td class="px-6 py-4 whitespace-nowrap">
                                     <input type="checkbox"
-                                        class="rounded border-gray-300 text-primary-600 focus:ring-primary-500">
+                                        class="rounded-sm border-gray-300 text-primary-600 focus:ring-primary-500">
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap">
                                     <div class="flex items-center">
@@ -170,11 +170,11 @@
                                 <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                     <div class="flex items-center justify-end space-x-2">
                                         <button @click="editUser(user)"
-                                            class="text-primary-600 hover:text-primary-900 dark:text-primary-400 dark:hover:text-primary-300 p-1 rounded transition-colors duration-200">
+                                            class="text-primary-600 hover:text-primary-900 dark:text-primary-400 dark:hover:text-primary-300 p-1 rounded-sm transition-colors duration-200">
                                             <i class="fas fa-edit"></i>
                                         </button>
                                         <button @click="confirmDeleteUser(user)"
-                                            class="text-red-600 hover:text-red-900 dark:text-red-400 dark:hover:text-red-300 p-1 rounded transition-colors duration-200">
+                                            class="text-red-600 hover:text-red-900 dark:text-red-400 dark:hover:text-red-300 p-1 rounded-sm transition-colors duration-200">
                                             <i class="fas fa-trash"></i>
                                         </button>
                                     </div>
@@ -222,7 +222,7 @@
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
             <!-- General Settings -->
             <div
-                class="lg:col-span-2 bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700">
+                class="lg:col-span-2 bg-white dark:bg-gray-800 rounded-xl shadow-xs border border-gray-200 dark:border-gray-700">
                 <div class="p-6 border-b border-gray-200 dark:border-gray-700">
                     <h3 class="text-lg font-semibold text-gray-900 dark:text-white">General Settings</h3>
                     <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Manage your application settings</p>
@@ -253,7 +253,7 @@
                             <label class="relative inline-flex items-center cursor-pointer">
                                 <input type="checkbox" checked class="sr-only peer">
                                 <div
-                                    class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary-300 dark:peer-focus:ring-primary-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-primary-600">
+                                    class="w-11 h-6 bg-gray-200 peer-focus:outline-hidden peer-focus:ring-4 peer-focus:ring-primary-300 dark:peer-focus:ring-primary-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-primary-600">
                                 </div>
                             </label>
                         </div>
@@ -268,7 +268,7 @@
                             <label class="relative inline-flex items-center cursor-pointer">
                                 <input type="checkbox" class="sr-only peer">
                                 <div
-                                    class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary-300 dark:peer-focus:ring-primary-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-primary-600">
+                                    class="w-11 h-6 bg-gray-200 peer-focus:outline-hidden peer-focus:ring-4 peer-focus:ring-primary-300 dark:peer-focus:ring-primary-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-primary-600">
                                 </div>
                             </label>
                         </div>
@@ -276,7 +276,7 @@
 
                     <div class="pt-4 border-t border-gray-200 dark:border-gray-700">
                         <button
-                            class="bg-primary-500 hover:bg-primary-600 text-white px-6 py-2 rounded-lg transition-colors duration-200 shadow-sm">
+                            class="bg-primary-500 hover:bg-primary-600 text-white px-6 py-2 rounded-lg transition-colors duration-200 shadow-xs">
                             Save Changes
                         </button>
                     </div>
@@ -286,7 +286,7 @@
             <!-- Quick Actions -->
             <div class="space-y-6">
                 <div
-                    class="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700">
+                    class="bg-white dark:bg-gray-800 rounded-xl shadow-xs border border-gray-200 dark:border-gray-700">
                     <div class="p-6 border-b border-gray-200 dark:border-gray-700">
                         <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Quick Actions</h3>
                     </div>
@@ -319,5 +319,5 @@
                 </div>
             </div>
         </div>
-    </div> --}}
+    </div>
 </x-admin::layout>

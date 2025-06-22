@@ -3,7 +3,7 @@
             <!-- Logo -->
             <div class="flex items-center justify-between h-16 px-4 border-b border-gray-200 dark:border-gray-700">
                 <div class="flex items-center space-x-3">
-                    <div class="w-10 h-10 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl flex items-center justify-center shadow-lg">
+                    <div class="w-10 h-10 bg-linear-to-br from-primary-500 to-primary-600 rounded-xl flex items-center justify-center shadow-lg">
                         <i class="fas fa-crown dark:text-white text-gray-800 text-lg"></i>
                     </div>
                     <div class="transition-all duration-300" :class="sidebarOpen ? 'visible' : 'invisible w-0'">
@@ -19,7 +19,7 @@
                         <button @click="setActiveTab(item.id)"
                                 class="w-full flex items-center px-3 py-3 text-sm font-medium rounded-lg transition-all duration-200 group"
                                 :class="activeTab === item.id 
-                                    ? 'bg-primary-50 dark:bg-primary-900/20 text-primary-700 dark:text-primary-400 shadow-sm' 
+                                    ? 'bg-primary-50 dark:bg-primary-900/20 text-primary-700 dark:text-primary-400 shadow-xs' 
                                     : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700/50'">
                             <i :class="item.icon" 
                                class="w-5 h-5 transition-colors duration-200"

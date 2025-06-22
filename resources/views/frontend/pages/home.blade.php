@@ -19,7 +19,7 @@
                 <!-- Login Cards -->
                 <div class="space-y-4">
                     <!-- Student Login -->
-                    <a href="{{ url('/login') }}" class="block p-6 bg-white dark:bg-gray-800 rounded-lg shadow hover:shadow-md transition-shadow duration-300 border border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-400">
+                    <a href="{{ url('/login') }}" class="block p-6 bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-400">
                         <div class="flex items-center space-x-4">
                             <div class="p-3 bg-blue-100 dark:bg-blue-900 rounded-lg">
                                 <i data-lucide="user" class="w-6 h-6 text-blue-600 dark:text-blue-300"></i>
@@ -33,7 +33,7 @@
                             </div>
                         </div>
                     </a>
-                    <a href="{{ url('/register') }}" class="block p-6 bg-white dark:bg-gray-800 rounded-lg shadow hover:shadow-md transition-shadow duration-300 border border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-400">
+                    <a href="{{ url('/register') }}" class="block p-6 bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-400">
                         <div class="flex items-center space-x-4">
                             <div class="p-3 bg-blue-100 dark:bg-blue-900 rounded-lg">
                                 <i data-lucide="user" class="w-6 h-6 text-blue-600 dark:text-blue-300"></i>
@@ -49,7 +49,7 @@
                     </a>
 
                     <!-- Admin Login -->
-                    <a href="{{ url('/admin/login') }}" class="block p-6 bg-white dark:bg-gray-800 rounded-lg shadow hover:shadow-md transition-shadow duration-300 border border-gray-200 dark:border-gray-700 hover:border-indigo-500 dark:hover:border-indigo-400">
+                    <a href="{{ url('/admin/login') }}" class="block p-6 bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-200 dark:border-gray-700 hover:border-indigo-500 dark:hover:border-indigo-400">
                         <div class="flex items-center space-x-4">
                             <div class="p-3 bg-indigo-100 dark:bg-indigo-900 rounded-lg">
                                 <i data-lucide="user-cog" class="w-6 h-6 text-indigo-600 dark:text-indigo-300"></i>
