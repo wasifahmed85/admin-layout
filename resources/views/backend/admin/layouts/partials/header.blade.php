@@ -1,4 +1,4 @@
-<header class="bg-white dark:bg-gray-800 shadow-sm border-b border-gray-200 dark:border-gray-700 h-16">
+<header class="bg-white dark:bg-gray-800 shadow-xs border-b border-gray-200 dark:border-gray-700 h-16">
                 <div class="flex items-center justify-between h-full px-6">
                     <div class="flex items-center space-x-4">
                         <button @click="toggleSidebar()" 
@@ -10,6 +10,7 @@
                             <p class="text-sm text-gray-500 dark:text-gray-400" x-text="getCurrentDate()"></p>
                         </div>
                     </div>
+                    
                     
                     <div class="flex items-center space-x-4">
                          
