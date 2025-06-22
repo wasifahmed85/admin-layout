@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -43,7 +43,10 @@ class AuthBaseModel extends Authenticatable
     }
 
     protected $appends = [
-       
+        'modified_image',
+
+        'verify_label',
+        'verify_color',
 
         'status_label',
         'status_color',
@@ -90,8 +93,74 @@ class AuthBaseModel extends Authenticatable
         return $this->status == self::STATUS_ACTIVE ? 'btn-error' : 'btn-success';
     }
 
+    // Verify Accessors
+    public function getVerifyLabelAttribute()
+    {
+        return $this->email_verified_at ? 'Verified' : 'Unverified';
+    }
 
-    
+    public function getVerifyColorAttribute()
+    {
+        return $this->email_verified_at ? 'badge-success' : 'badge-error';
+    }
 
+    // Verified scope
+    public function scopeVerified(Builder $query): Builder
+    {
+        return $query->whereNotNull('email_verified_at');
+    }
+    public function scopeUnverified(Builder $query): Builder
+    {
+        return $query->whereNull('email_verified_at');
+    }
+    public function scopeActive(Builder $query): Builder
+    {
+        return $query->where('status', self::STATUS_ACTIVE);
+    }
+    public function scopeInactive(Builder $query): Builder
+    {
+        return $query->where('status', self::STATUS_INACTIVE);
+    }
 
+    // Accessor for created time
+    public function getCreatedAtFormattedAttribute()
+    {
+        return timeFormat($this->created_at);
+    }
+
+    // Accessor for updated time
+    public function getUpdatedAtFormattedAttribute()
+    {
+        return $this->created_at != $this->updated_at ? timeFormat($this->updated_at) : 'N/A';
+    }
+
+    // Accessor for deleted time
+    public function getDeletedAtFormattedAttribute()
+    {
+        return $this->deleted_at ? timeFormat($this->deleted_at) : 'N/A';
+    }
+
+    // Accessor for created time human readable
+    public function getCreatedAtHumanAttribute()
+    {
+        return timeFormatHuman($this->created_at);
+    }
+
+    // Accessor for updated time human readable
+    public function getUpdatedAtHumanAttribute()
+    {
+        return $this->created_at != $this->updated_at ? timeFormatHuman($this->updated_at) : 'N/A';
+    }
+
+    // Accessor for deleted time human readable
+    public function getDeletedAtHumanAttribute()
+    {
+        return $this->deleted_at ? timeFormatHuman($this->deleted_at) : 'N/A';
+    }
+
+    // Accessor for modified image
+    public function getModifiedImageAttribute()
+    {
+        return auth_storage_url($this->image);
+    }
 }

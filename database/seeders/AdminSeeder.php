@@ -21,5 +21,47 @@ class AdminSeeder extends Seeder
             'password' => 'superadmin@dev.com',
             'status' => AuthBaseModel::STATUS_ACTIVE,
         ]);
+        Admin::create([
+            'name' => 'Super Admin',
+            'email' => 'superadmin@1.com',
+            'email_verified_at' => now(),
+            'password' => 'superadmin@1.com',
+            'status' => AuthBaseModel::STATUS_ACTIVE,
+        ]);
+        Admin::create([
+            'name' => 'Super Admin',
+            'email' => 'superadmin@2.com',
+            'email_verified_at' => now(),
+            'password' => 'superadmin@2.com',
+            'status' => AuthBaseModel::STATUS_ACTIVE,
+        ]);
+        Admin::create([
+            'name' => 'Super Admin',
+            'email' => 'superadmin@3.com',
+            'email_verified_at' => now(),
+            'password' => 'superadmin@3.com',
+            'status' => AuthBaseModel::STATUS_ACTIVE,
+        ]);
+        Admin::create([
+            'name' => 'Super Admin',
+            'email' => 'superadmin@4.com',
+            'email_verified_at' => now(),
+            'password' => 'superadmin@4.com',
+            'status' => AuthBaseModel::STATUS_ACTIVE,
+        ]);
+        Admin::create([
+            'name' => 'Super Admin',
+            'email' => 'superadmin@5.com',
+            'email_verified_at' => now(),
+            'password' => 'superadmin@5.com',
+            'status' => AuthBaseModel::STATUS_ACTIVE,
+        ]);
+        Admin::create([
+            'name' => 'Super Admin',
+            'email' => 'superadmin@6.com',
+            'email_verified_at' => now(),
+            'password' => 'superadmin@6.com',
+            'status' => AuthBaseModel::STATUS_ACTIVE,
+        ]);
     }
 }
