@@ -1,10 +1,10 @@
-{{-- <x-admin::layout>
+<x-admin::layout>
     <x-slot name="title">Index Page</x-slot>
     <x-slot name="page_slug">admin</x-slot>
 
 <div class="container">
     <h1>Users List</h1>
-    <table id="usersTable" class="display nowrap" style="width:100%">
+    <table id="usersTable" class="display nowrap datatable" style="width:100%">
         <thead class="bg-gray-50 dark:bg-gray-700">
             <tr class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                 <th>ID</th>
@@ -26,6 +26,8 @@
     </table>
 </div>
 @push('js')
+
+        <script src="{{ asset('assets/js/datatable.js') }}"></script>
     <script>
     $(document).ready(function () {
         $('#usersTable').DataTable({
@@ -34,4 +36,4 @@
     });
 </script>
 @endpush
-</x-admin::layout> --}}
+</x-admin::layout>
