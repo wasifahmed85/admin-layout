@@ -24,6 +24,7 @@ return new class extends Migration
             $table->tinyInteger('status')->default(AuthBaseModel::STATUS_ACTIVE);
             $table->timestamp('email_verified_at')->nullable();
 
+
             $table->string('password');
             $table->string('image')->nullable();
             $table->rememberToken();

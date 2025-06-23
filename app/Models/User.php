@@ -3,8 +3,9 @@
 namespace App\Models;
 
 use App\Models\AuthBaseModel;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
 
-class User extends AuthBaseModel
+class User extends AuthBaseModel implements MustVerifyEmail
 {
    
 
