@@ -58,8 +58,6 @@ class PasswordResetLinkController extends Controller
         $admin->last_otp_sent_at = now();
         $admin->save();
 
-        // Send OTP email
-        Mail::to($admin->email)->send(new AdminOtpMail($admin, $admin->email_otp));
 
         // Store the admin's ID in the session for OtpVerificationController
         Session::put('otp_verification_admin_id', $admin->id);
