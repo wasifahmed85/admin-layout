@@ -33,7 +33,6 @@ class AdminService
             $data['status'] = Admin::STATUS_ACTIVE;
             $data['created_by'] = admin()->id;
             $admin = Admin::create($data);
-            $admin->assignRole($admin->role->name);
             return $admin;
         });
     }
@@ -48,7 +47,6 @@ class AdminService
             $data['password'] = $data['password'] ?? $admin->password;
             $data['updated_by'] = admin()->id;
             $admin->update($data);
-            $admin->syncRoles($admin->role->name);
             return $admin;
         });
     }

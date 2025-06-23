@@ -6,17 +6,22 @@ use App\Models\AuthBaseModel;
 
 class Admin extends AuthBaseModel
 {
-   
-
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var list<string>
-     */
+    protected $guard = 'admin';
     protected $fillable = [
+        'sort_order',
         'name',
+        'username',
         'email',
         'password',
+        'role_id',
+        'status',
+        'email_verified_at',
+        'image',
+
+        'created_by',
+        'updated_by',
+        'deleted_by',
+
     ];
 
     /**

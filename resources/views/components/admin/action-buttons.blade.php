@@ -17,27 +17,27 @@
             x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
             x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 scale-100"
             x-transition:leave-end="opacity-0 scale-95" style="display: none;">
-            {{-- @foreach ($menuItems as $key => $menuItem)
+            @foreach ($menuItems as $key => $menuItem)
                 @php
                     $check = false;
 
                     // Permissions (if you want to re-enable)
-                    if (
-                        (!isset($menuItem['permissions']) ||
-                            !is_array($menuItem['permissions']) ||
-                            count($menuItem['permissions']) == 0 ||
-                            !admin()->hasAnyPermission($menuItem['permissions'])) &&
-                        !isSuperAdmin()
-                    ) {
-                        continue;
-                    } elseif (
-                        (isset($menuItem['permissions']) &&
-                            is_array($menuItem['permissions']) &&
-                            admin()->hasAnyPermission($menuItem['permissions'])) ||
-                        isSuperAdmin()
-                    ) {
-                        $check = true;
-                    }
+                    // if (
+                    //     (!isset($menuItem['permissions']) ||
+                    //         !is_array($menuItem['permissions']) ||
+                    //         count($menuItem['permissions']) == 0 ||
+                    //         !admin()->hasAnyPermission($menuItem['permissions'])) &&
+                    //     !isSuperAdmin()
+                    // ) {
+                    //     continue;
+                    // } elseif (
+                    //     (isset($menuItem['permissions']) &&
+                    //         is_array($menuItem['permissions']) &&
+                    //         admin()->hasAnyPermission($menuItem['permissions'])) ||
+                    //     isSuperAdmin()
+                    // ) {
+                    //     $check = true;
+                    // }
 
                     $parameterArray = $menuItem['params'] ?? [];
                     if (!isset($menuItem['routeName']) || $menuItem['routeName'] == '') {
@@ -97,7 +97,7 @@
                         @endif
                     </li>
                 @endif
-            @endforeach --}}
+            @endforeach
         </ul>
     </div>
 </div>

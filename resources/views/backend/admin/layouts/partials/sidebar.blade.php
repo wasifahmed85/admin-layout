@@ -35,15 +35,17 @@
              </div>
          </template>
      </nav>
-     <a href="index">
+     <a href="{{ route('am.admin.index') }}">
          Admin
      </a>
      <!-- User Profile -->
      <div class="absolute bottom-0 left-0 right-0 p-4 border-t border-gray-200 dark:border-gray-700">
          <div class="flex items-center space-x-3 transition-all duration-20 ease-in-out"
              :class="sidebarOpen ? 'visible' : 'hidden w-0'">
-             <img src="/placeholder.svg?height=40&width=40" alt="Profile"
-                 class="w-10 h-10 rounded-full ring-2 ring-primary-500">
+             <div>
+                 <img src="{{ auth_storage_url(admin()->image) }}" alt=""
+                     class="w-10 h-10 rounded-full ring-2 ring-primary-500">
+             </div>
              <div class="transition-all duration-20 ">
                  <p class="text-sm font-medium text-gray-900 dark:text-white">Admin User</p>
                  <p class="text-xs text-gray-500 dark:text-gray-400">admin@company.com</p>
