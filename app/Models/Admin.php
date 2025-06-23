@@ -3,9 +3,17 @@
 namespace App\Models;
 
 use App\Models\AuthBaseModel;
+use App\Notifications\AdminResetPasswordNotification;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Notifications\Notifiable;
 
 class Admin extends AuthBaseModel
 {
+        use HasFactory, Notifiable;
+    public function sendPasswordResetNotification($token)
+    {
+        $this->notify(new AdminResetPasswordNotification($token));
+    }
     protected $guard = 'admin';
     protected $fillable = [
         'sort_order',
