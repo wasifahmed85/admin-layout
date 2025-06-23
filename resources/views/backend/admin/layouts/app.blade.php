@@ -25,7 +25,7 @@
             display: none;
         }
     </style>
-      <script>
+    <script>
         // On page load, immediately apply theme from localStorage to prevent flash
         (function() {
             let theme = localStorage.getItem('theme') || 'system';
@@ -41,9 +41,13 @@
             }
         })();
     </script>
-     <script src="{{ asset('assets/js/toggle-theme.js') }}"></script>
+    <script src="{{ asset('assets/js/toggle-theme.js') }}"></script>
     {{-- BoxIcon  --}}
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <link rel="stylesheet" href="{{ asset('assets/css/dashboard.css') }}">
+
     {{-- sweetalert2 --}}
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -60,12 +64,8 @@
             @endif
         });
 
-        // const content_image_upload_url = '{{ route('file.ci_upload') }}';
+        const content_image_upload_url = '{{ route('file.ci_upload') }}';
     </script>
-
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <link rel="stylesheet" href="{{ asset('assets/css/dashboard.css') }}">
-    
 
     @stack('cs')
 </head>
@@ -674,7 +674,7 @@
             }
         }
     </script>
-    
+
     <script src="{{ asset('assets/js/details-modal.js') }}"></script>
     @stack('js')
 </body>

@@ -19,11 +19,6 @@ class AdminController extends Controller
     {
         $this->adminService = $adminService;
     }
-    // public function index()
-    // {
-    //      $data['admins'] = Admin::latest()->get();
-    //     return view('backend.admin.index',$data);
-    // }
     public function index(Request $request)
     {
         if ($request->ajax()) {
