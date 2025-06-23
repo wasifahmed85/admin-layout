@@ -44,9 +44,9 @@
                         +23%
                     </div>
                 </div>
-                <h3 class="text-2xl font-bold text-text-white mb-1">$<span
+                <h3 class="text-2xl font-bold text-gray-800/60 dark:text-text-dark-primary mb-1">$<span
                         x-text="stats.revenue.toLocaleString()">48,392</span></h3>
-                <p class="text-text-dark-primary text-sm">Total Revenue</p>
+                <p class="text-gray-800/60 dark:text-text-dark-primary text-sm">Total Revenue</p>
                 <div class="mt-4 h-1 bg-white/10 rounded-full overflow-hidden">
                     <div class="h-full bg-gradient-to-r from-green-400 to-green-600 rounded-full progress-bar"
                         style="width: 60%;"></div>

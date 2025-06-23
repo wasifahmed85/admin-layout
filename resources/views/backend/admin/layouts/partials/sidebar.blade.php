@@ -55,7 +55,7 @@
      <!-- User Profile -->
      <div class="absolute bottom-0 left-0 right-0 p-4 border-t border-gray-200 dark:border-gray-700">
          <div class="flex items-center space-x-3 transition-all duration-20 ease-in-out"
-             :class="sidebarOpen ? 'visible' : 'hidden w-0'">
+             :class="{ 'hidden': !sidebar_expanded }">
              <div>
                  <img src="{{ auth_storage_url(admin()->image) }}" alt=""
                      class="w-10 h-10 rounded-full ring-2 ring-primary-500">
