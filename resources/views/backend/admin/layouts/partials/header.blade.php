@@ -29,8 +29,10 @@
             <div class="relative" x-data="{ open: false }">
                 <button @click="open = !open"
                     class="flex items-center space-x-2 p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200">
-                    <img src="/placeholder.svg?height=32&width=32" alt="Avatar"
-                        class="w-8 h-8 rounded-full ring-2 ring-primary-500">
+                    <div>
+                        <img src="{{ auth_storage_url(admin()->image) }}" alt=""
+                            class="w-10 h-10 rounded-full ring-2 ring-primary-500">
+                    </div>
                     <i class="fas fa-chevron-down text-sm text-gray-500 dark:text-gray-400"></i>
                 </button>
 
@@ -46,7 +48,7 @@
                             class="flex items-center px-3 py-2 text-sm text-gray-700 dark:text-gray-300 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200">
                             <i class="fas fa-cog mr-3 w-4"></i>Settings
                         </a>
-                         <x-admin.profile-navlink route="{{ route('admin.logout') }}" logout='true'
+                        <x-admin.profile-navlink route="{{ route('admin.logout') }}" logout='true'
                             name="{{ __('Sign Out') }}" />
                     </div>
                 </div>

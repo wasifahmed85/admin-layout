@@ -85,11 +85,11 @@
 
     <div class="flex h-screen overflow-hidden">
         <!-- Sidebar -->
-        <x-admin::sidebar />
+        <x-admin::sidebar :active="$page_slug"/>
         <!-- Main Content -->
         <div class="flex-1 flex flex-col overflow-hidden">
             <!-- Header -->
-            <x-admin::header />
+            <x-admin::header :breadcrumb="$breadcrumb"/>
 
             <!-- Main Content Area -->
             <main class="flex-1 overflow-y-auto bg-gray-50 dark:bg-gray-900">

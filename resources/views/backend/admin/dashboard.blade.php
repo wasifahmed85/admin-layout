@@ -1,6 +1,7 @@
 <x-admin::layout>
     <x-slot name="title">Admin Dashboard</x-slot>
-
+    <x-slot name="breadcrumb">Dashboard</x-slot>
+    <x-slot name="page_slug">admin-dashboard</x-slot>
 
     <!-- Dashboard Tab -->
     <div x-show="activeTab === 'dashboard'" class="space-y-6 animate-fade-in">

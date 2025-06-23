@@ -8,12 +8,13 @@ use Illuminate\View\Component;
 
 class header extends Component
 {
-    /**
-     * Create a new component instance.
-     */
-    public function __construct()
+    public $active;
+    public $breadcrumb;
+
+    public function __construct($active = null, $breadcrumb = null)
     {
-        //
+        $this->active = $active;
+        $this->breadcrumb = $breadcrumb;
     }
 
     /**
