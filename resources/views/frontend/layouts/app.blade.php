@@ -11,7 +11,22 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+ <script>
+        // On page load, immediately apply theme from localStorage to prevent flash
+        (function() {
+            let theme = localStorage.getItem('theme') || 'system';
 
+            // Apply theme immediately
+            if (theme === 'system') {
+                const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                document.documentElement.classList.toggle('dark', systemPrefersDark);
+                document.documentElement.setAttribute('data-theme', systemPrefersDark ? 'dark' : 'light');
+            } else {
+                document.documentElement.classList.toggle('dark', theme === 'dark');
+                document.documentElement.setAttribute('data-theme', theme);
+            }
+        })();
+    </script>
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
@@ -43,6 +58,68 @@
             lucide.createIcons();
             // }
         });
+    </script>
+     <script>
+        function adminDashboard() {
+            return {
+
+                 // Responsive state
+                desktop: window.innerWidth >= 1024,
+                mobile: window.innerWidth <= 768,
+                tablet: window.innerWidth < 1024,
+                sidebar_expanded: window.innerWidth >= 1024,
+                mobile_menu_open: false,
+
+                // App state
+                searchQuery: '',
+                darkMode: true,
+                 handleResize() {
+                    this.desktop = window.innerWidth >= 1024;
+                    if (this.desktop) {
+                        this.mobile_menu_open = false;
+                        this.sidebar_expanded = true;
+                    } else {
+                        this.sidebar_expanded = false;
+                    }
+                },
+
+                toggleSidebar() {
+                    if (this.desktop) {
+                        this.sidebar_expanded = !this.sidebar_expanded;
+                    } else {
+                        this.mobile_menu_open = !this.mobile_menu_open;
+                    }
+                },
+
+                closeMobileMenu() {
+                    if (!this.desktop) {
+                        this.mobile_menu_open = false;
+                    }
+                },
+            }
+              // Initialize Lucide icons after DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // if (typeof lucide !== 'undefined') {
+            lucide.createIcons();
+            // }
+        });
+
+        // Smooth scrolling for anchor links
+        document.addEventListener('click', function(e) {
+            if (e.target.matches('a[href^="#"]')) {
+                e.preventDefault();
+                const target = document.querySelector(e.target.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            }
+        });
+
+        }
+        
     </script>
     @stack('js')
 </body>
