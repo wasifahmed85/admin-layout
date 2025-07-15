@@ -164,7 +164,7 @@ function formatValue(value, key, type, label_color) {
     }
 
     // Format based on key type
-    if (key.toLowerCase().includes('status')) {
+    if (type === 'badge') {
         return formatStatus(value, label_color);
     } else if (key.toLowerCase().includes('email')) {
         return `<a href="mailto:${value}" class="text-blue-600 dark:text-blue-400 hover:underline">${value}</a>`;
